@@ -1,0 +1,36 @@
+<select [(ngModel)]="selected">
+  <option *ngFor="let list of lists" [ngValue]="list">{{list.name}}</option>
+  <option value="new">CREATE NEW</option>
+</select>
+
+<!-- Last Price & Day Change & Bid & Ask & Day's Range &	52 Week Range	& Volume -->
+<div *ngIf="selected && selected.stocks && selected.stocks.length > 0">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Ticker</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+      <tbody *ngFor="let stock of selected.stocks">
+        <tr>
+          <td>{{stock.ticker}}</td>
+          <td>{{stock.price}}</td>
+        </tr>
+      </tbody>
+  </table>
+
+
+
+</div>
+
+
+
+
+
+<div *ngIf="watchlistService.createNew">
+  Watchlist Name:
+  <input [(ngModel)]="newWatchlist" type="text" />
+</div>
+<button #selectedListName (click)="createNewWatchlist(newWatchlist)"></button>

@@ -1,0 +1,35 @@
+<!-- <div *ngIf="selectedStock">
+
+  <h2>{{selectedStock.name | uppercase}} Details</h2>
+  <div>
+    <span>ticker: </span>{{selectedStock.ticker}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedStock.name" placeholder="name" />
+    </label>
+  </div>
+
+</div> -->
+
+<!-- <h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul> -->
+
+<!-- Strip the li back to just *ngFor, wrap the badge and name in an anchor<a> element,
+  add a routerLink attribute to the anchor that is the same as in the dashboard template-->
+
+<h2>My Stocks</h2>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let stock of stocks">
+    <a routerLink="/detail/{{stock.ticker}}">
+      <span class="badge">{{stock.ticker}}</span> {{stock.name}}
+    </a>
+  </li>
+</ul>
+
+<!-- <stock-detail [stock]="selectedHero"></stock-detail> -->

@@ -1,0 +1,34 @@
+<div *ngIf="stock">
+  <h3>{{stock.name | uppercase}}</h3>
+  <div>
+    <label>Ticker:
+      <input [(ngModel)]="stock.ticker" placeholder="ticker" />
+    </label>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Price</th>
+        <th scope="col">Price Open</th>
+        <th scope="col">Day High</th>
+        <th scope="col">Day Low</th>
+        <th scope="col">Day Change</th>
+        <th scope="col">% Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{stock.price}}</td>
+        <td>{{stock.price_open}}</td>
+        <td>{{stock.day_high}}</td>
+        <td>{{stock.day_low}}</td>
+        <td>{{stock.day_change}}</td>
+        <td>{{stock.change_pct}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<button (click)="goBack()">go back</button>

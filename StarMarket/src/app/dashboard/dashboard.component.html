@@ -1,0 +1,41 @@
+<!-- <h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages> -->
+<br/>
+<h3>Top Holdings</h3>
+
+<div class=card-group>
+
+  <a *ngFor="let stock of stocks" class="col-1-4" routerLink="/detail/{{stock.ticker}}">
+    <div class=card>
+      <div class="card-body text-center">
+        <h4 class="card-title">{{stock.name}}</h4>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<!-- 
+<div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div> -->
